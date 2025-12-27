@@ -134,41 +134,6 @@
             font-weight: 400;
         }
 
-        .add-project-btn {
-            background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
-            color: white;
-            border: none;
-            padding: 16px 40px;
-            font-size: 1rem;
-            border-radius: 12px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 40px rgba(139, 92, 246, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .add-project-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .add-project-btn:hover::before {
-            left: 100%;
-        }
-
-        .add-project-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 15px 50px rgba(139, 92, 246, 0.4);
-        }
-
         .section-title {
             font-size: 2rem;
             margin: 80px 0 40px;
@@ -263,7 +228,7 @@
 
         .project-footer {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: center;
             margin-top: 20px;
         }
@@ -282,154 +247,6 @@
         .project-link:hover {
             color: #ec4899;
             gap: 10px;
-        }
-
-        .delete-btn {
-            background: rgba(239, 68, 68, 0.1);
-            border: 1px solid rgba(239, 68, 68, 0.3);
-            color: #f87171;
-            padding: 8px 18px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 0.85rem;
-            font-weight: 500;
-        }
-
-        .delete-btn:hover {
-            background: rgba(239, 68, 68, 0.2);
-            border-color: rgba(239, 68, 68, 0.5);
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-            animation: fadeIn 0.3s ease;
-        }
-
-        .modal.active {
-            display: flex;
-        }
-
-        .modal-content {
-            background: rgba(26, 26, 26, 0.95);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 40px;
-            border-radius: 24px;
-            max-width: 550px;
-            width: 90%;
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
-            animation: slideUp 0.3s ease-out;
-        }
-
-        .modal-content h2 {
-            margin-bottom: 30px;
-            font-size: 1.8rem;
-            font-weight: 700;
-        }
-
-        .form-group {
-            margin-bottom: 24px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 10px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            color: rgba(255,255,255,0.8);
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 14px 18px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            font-size: 1rem;
-            font-family: inherit;
-            transition: all 0.3s ease;
-            color: #fff;
-        }
-
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: rgba(255,255,255,0.3);
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #8b5cf6;
-            background: rgba(255, 255, 255, 0.08);
-            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .modal-buttons {
-            display: flex;
-            gap: 12px;
-            margin-top: 30px;
-        }
-
-        .modal-buttons button {
-            flex: 1;
-            padding: 14px;
-            border: none;
-            border-radius: 12px;
-            font-size: 1rem;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .save-btn {
-            background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
-            color: white;
-            box-shadow: 0 4px 20px rgba(139, 92, 246, 0.3);
-        }
-
-        .save-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(139, 92, 246, 0.4);
-        }
-
-        .cancel-btn {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255,255,255,0.8);
-        }
-
-        .cancel-btn:hover {
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        .empty-state {
-            text-align: center;
-            padding: 100px 20px;
-            color: rgba(255,255,255,0.4);
-            grid-column: 1/-1;
-        }
-
-        .empty-state-icon {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            opacity: 0.3;
         }
 
         @keyframes fadeIn {
@@ -489,116 +306,53 @@
             <div class="header-badge">✨ Welcome to my portfolio</div>
             <h1>Creative Projects<br>& Experiments</h1>
             <p class="subtitle">Showcasing my latest work and ideas</p>
-            <button class="add-project-btn" onclick="openModal()">+ Add New Project</button>
         </header>
 
         <div class="projects-grid" id="projectsGrid"></div>
     </div>
 
-    <div class="modal" id="modal">
-        <div class="modal-content">
-            <h2>Add New Project</h2>
-            <form id="projectForm">
-                <div class="form-group">
-                    <label>Project Title</label>
-                    <input type="text" id="projectTitle" placeholder="My Awesome Project" required>
-                </div>
-                <div class="form-group">
-                    <label>Description</label>
-                    <textarea id="projectDescription" placeholder="Tell us about your project..." required></textarea>
-                </div>
-                <div class="form-group">
-                    <label>Project Link (optional)</label>
-                    <input type="url" id="projectLink" placeholder="https://example.com">
-                </div>
-                <div class="form-group">
-                    <label>Emoji Icon (optional)</label>
-                    <input type="text" id="projectEmoji" placeholder="🚀" maxlength="2">
-                </div>
-                <div class="modal-buttons">
-                    <button type="button" class="cancel-btn" onclick="closeModal()">Cancel</button>
-                    <button type="submit" class="save-btn">Save Project</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
     <script>
-        let projects = [];
-
-        // Cargar proyectos guardados al iniciar
-        function loadProjects() {
-            try {
-                const saved = window.storage ? null : localStorage.getItem('portfolio_projects');
-                if (saved) {
-                    projects = JSON.parse(saved);
-                }
-            } catch (error) {
-                console.error('Error loading projects:', error);
+        const projects = [
+            {
+                id: 1,
+                title: "In/Out Tennis Ball Tracker",
+                description: "An automated computer vision system designed to detect tennis ball bounces and accurately determine in/out calls from match videos. The system leverages real-time ball detection using YOLOv8, allows users to interactively mark court corners, applies perspective transformation for precise court mapping, and performs bounce detection with reliable in/out classification. All functionality is integrated into a web-based interface that enables users to easily upload match videos and view results in a clear and user-friendly manner.",
+                link: "https://github.com/DanielWynter/DanielWynter.github.io",
+                emoji: "🎾"
+            },
+            {
+                id: 2,
+                title: "Recommendation System",
+                description: "This project implements core data structures and algorithms in C++ to manage a movie dataset and build a basic recommender system. The system supports filtering movies based on streaming platform availability, year of release, and Rotten Tomatoes ratings, and generates tailored recommendations accordingly. To achieve this, it makes use of dynamic arrays, singly and doubly linked lists, as well as queues and priority queues, combined with efficient algorithms such as quick sort for dataset ordering and sequential and binary search for optimized querying.",
+                link: "https://github.com/DanielWynter/Recommendation-System",
+                emoji: "🍿"
+            },
+            {
+                id: 3,
+                title: "Hiker Safety Mobile App",
+                description: "SafeStep is a mobile application developed in React Native (Expo) aimed at improving hiker safety in outdoor environments. The app provides interactive maps with offline support, enables SOS alerts with real-time location sharing, and supports user profiles for both hikers and organizations. It also includes an administrative panel for parks or tourist centers to manage visitors and monitor risk areas, and is built using TypeScript and Firebase with a modern, responsive interface.",
+                link: "https://github.com/Lucianogrc/SafeStep",
+                emoji: "🚵"
+            },
+            {
+                id: 4,
+                title: "School-Donor Matching Platform",
+                description: "The School–Donor Matching Platform is a full-stack web application designed to efficiently connect educational institutions with donors and partners. It supports role-based authentication for schools, donors, and administrators, enabling users to register, manage profiles, and complete dynamic multi-step forms with validation. The backend processes and stores data securely in PostgreSQL and performs automated matching based on submitted information, while an administrative dashboard allows oversight of users and matches through a responsive, user-friendly interface.",
+                link: "https://github.com/DanielWynter/MexicanosPrimeroJalisco",
+                emoji: "📚"
+            },
+            {
+                id: 5,
+                title: "Autonomous Search and Detection Drone",
+                description: "Developed an autonomous drone system capable of patrolling mountainous terrain and detecting a person of interest using computer vision with a custom-trained YOLOv8 model. The system integrates real-time AI inference with a FastAPI backend, enabling image-based detection, target tracking, and structured JSON outputs that include bounding boxes and confidence scores. Additionally, an end-to-end, reproducible machine learning pipeline was designed, covering dataset labeling, transfer learning, model training, and deployment within an isolated Python virtual environment.",
+                link: "",
+                emoji: "🛸"
             }
-        }
-
-        // Guardar proyectos
-        async function saveToStorage() {
-            try {
-                if (window.storage) {
-                    await window.storage.set('portfolio_projects', JSON.stringify(projects));
-                } else {
-                    localStorage.setItem('portfolio_projects', JSON.stringify(projects));
-                }
-            } catch (error) {
-                console.error('Error saving projects:', error);
-            }
-        }
-
-        function openModal() {
-            document.getElementById('modal').classList.add('active');
-        }
-
-        function closeModal() {
-            document.getElementById('modal').classList.remove('active');
-            document.getElementById('projectForm').reset();
-        }
-
-        async function saveProject(e) {
-            e.preventDefault();
-            
-            const project = {
-                id: Date.now(),
-                title: document.getElementById('projectTitle').value,
-                description: document.getElementById('projectDescription').value,
-                link: document.getElementById('projectLink').value,
-                emoji: document.getElementById('projectEmoji').value || '📁'
-            };
-
-            projects.push(project);
-            await saveToStorage();
-            renderProjects();
-            closeModal();
-        }
-
-        async function deleteProject(id) {
-            if (confirm('¿Estás seguro de que quieres eliminar este proyecto?')) {
-                projects = projects.filter(p => p.id !== id);
-                await saveToStorage();
-                renderProjects();
-            }
-        }
+        ];
 
         function renderProjects() {
             const grid = document.getElementById('projectsGrid');
             
-            if (projects.length === 0) {
-                grid.innerHTML = `
-                    <div class="empty-state">
-                        <div class="empty-state-icon">📂</div>
-                        <p style="font-size: 1.2rem; margin-bottom: 10px;">No projects yet</p>
-                        <p>Click "Add New Project" to get started</p>
-                    </div>
-                `;
-                return;
-            }
-
             grid.innerHTML = projects.map(project => `
                 <div class="project-card">
                     <div class="project-image">${project.emoji}</div>
@@ -606,24 +360,13 @@
                         <h3 class="project-title">${project.title}</h3>
                         <p class="project-description">${project.description}</p>
                         <div class="project-footer">
-                            ${project.link ? `<a href="${project.link}" target="_blank" class="project-link">View Project →</a>` : '<span></span>'}
-                            <button class="delete-btn" onclick="deleteProject(${project.id})">Delete</button>
+                            ${project.link ? `<a href="${project.link}" target="_blank" class="project-link">View Project →</a>` : ''}
                         </div>
                     </div>
                 </div>
             `).join('');
         }
 
-        document.getElementById('projectForm').addEventListener('submit', saveProject);
-        
-        document.getElementById('modal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeModal();
-            }
-        });
-
-        // Cargar proyectos al iniciar
-        loadProjects();
         renderProjects();
     </script>
 </body>
