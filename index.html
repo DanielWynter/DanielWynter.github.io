@@ -477,7 +477,7 @@
     
     <div class="container">
         <nav class="navbar">
-            <div class="logo">Portfolio.</div>
+            <div class="logo">Daniel Eden Wynter Gonzalez</div>
             <div class="nav-links">
                 <a href="#work">Work</a>
                 <a href="#about">About</a>
@@ -526,6 +526,31 @@
     <script>
         let projects = [];
 
+        // Cargar proyectos guardados al iniciar
+        function loadProjects() {
+            try {
+                const saved = window.storage ? null : localStorage.getItem('portfolio_projects');
+                if (saved) {
+                    projects = JSON.parse(saved);
+                }
+            } catch (error) {
+                console.error('Error loading projects:', error);
+            }
+        }
+
+        // Guardar proyectos
+        async function saveToStorage() {
+            try {
+                if (window.storage) {
+                    await window.storage.set('portfolio_projects', JSON.stringify(projects));
+                } else {
+                    localStorage.setItem('portfolio_projects', JSON.stringify(projects));
+                }
+            } catch (error) {
+                console.error('Error saving projects:', error);
+            }
+        }
+
         function openModal() {
             document.getElementById('modal').classList.add('active');
         }
@@ -535,7 +560,7 @@
             document.getElementById('projectForm').reset();
         }
 
-        function saveProject(e) {
+        async function saveProject(e) {
             e.preventDefault();
             
             const project = {
@@ -547,13 +572,15 @@
             };
 
             projects.push(project);
+            await saveToStorage();
             renderProjects();
             closeModal();
         }
 
-        function deleteProject(id) {
-            if (confirm('Are you sure you want to delete this project?')) {
+        async function deleteProject(id) {
+            if (confirm('¿Estás seguro de que quieres eliminar este proyecto?')) {
                 projects = projects.filter(p => p.id !== id);
+                await saveToStorage();
                 renderProjects();
             }
         }
@@ -595,6 +622,8 @@
             }
         });
 
+        // Cargar proyectos al iniciar
+        loadProjects();
         renderProjects();
     </script>
 </body>
